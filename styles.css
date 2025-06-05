@@ -1,0 +1,247 @@
+@font-face{
+    font-family: 'Neue Montreal';
+    src: url('assets/fonts/NeueMontreal-Light.otf');
+    font-weight: 100;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Neue Montreal';
+    src: url('assets/fonts/NeueMontreal-LightItalic.otf');
+    font-weight: 100;
+    font-style: italic;
+}
+@font-face{
+    font-family: 'Neue Montreal';
+    src: url('assets/fonts/NeueMontreal-Regular.otf');
+    font-weight: 200;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Neue Montreal';
+    src: url('assets/fonts/NeueMontreal-Italic.otf');
+    font-weight: 200;
+    font-style: italic;
+}
+@font-face{
+    font-family: 'Neue Montreal';
+    src: url('assets/fonts/NeueMontreal-Medium.otf');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Neue Montreal';
+    src: url('assets/fonts/NeueMontreal-MediumItalic.otf');
+    font-weight: 300;
+    font-style: italic;
+}
+@font-face{
+    font-family: 'Neue Montreal';
+    src: url('assets/fonts/NeueMontreal-Bold.otf');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Neue Montreal';
+    src: url('assets/fonts/NeueMontreal-BoldItalic.otf');
+    font-weight: 400;
+    font-style: italic;
+}
+:root{
+    color-scheme: light;
+}
+*{
+    font-family: 'Neue Montreal';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+::selection{
+    background-color: #445;
+    color: #fff;
+}
+html{
+    scroll-behavior: smooth;
+}
+main{
+    margin: 2rem;
+    margin-bottom: 0;
+    padding: 2rem;
+    height: max-content;
+    border: 1px solid #000;
+}
+li{
+    list-style: none;
+}
+main h1{
+    font-size: 3rem;
+    font-weight: 300;
+}
+main h2{
+    font-size: .8rem;
+    font-weight: 200;
+}
+main .heading{
+    margin-bottom: 1rem;
+}
+section{
+    border-top: 1px solid #000;
+    display: flex;
+    flex-direction: row;
+    padding-top: 1rem;
+}
+section h2{
+    text-transform: uppercase;
+    width: 20%;
+    font-size: 1.2rem;
+    font-weight: 400;
+    height: fit-content;
+}
+h2:hover{
+    text-decoration: underline;
+}
+section .section-content{
+    width: 80%;
+    display: flex;
+    flex-direction: column-reverse;
+    row-gap: 1rem;
+}
+section.subsection{
+    border: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    height: 15rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #000;
+}
+section.text-section section.subsection{
+    padding-bottom: 0;
+    height: fit-content;
+    max-height: 12rem;
+}
+section.text-section section.subsection:first-child{
+    margin-bottom: 2rem;
+}
+section.subsection h3{
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    font-weight: 300;
+    width: 25%;
+}
+section.subsection h3:hover{
+    text-decoration: underline;
+}
+section.subsection .subsection-title{
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    font-weight: 300;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    row-gap: .5rem;
+}
+section.subsection .subsection-title h3{
+    width: 100%;
+}
+.subsection-title p{
+    font-size: .9rem;
+    opacity: .5;
+}
+section.subsection .subsection-list{
+    display: flex;
+    flex-direction: column;
+    font-weight: 200;
+    width: 75%;
+    font-size: 1.2rem;
+    flex-wrap: wrap;
+    text-transform: capitalize;
+}
+.subsection-list li{
+    padding-bottom: .5rem;
+}
+section.subsection .subsection-content{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #000;
+    border-radius: 5px;
+    width: 75%;
+}
+section.subsection:nth-child(1){
+    border-bottom: none;
+}
+.subsection-content .img{
+    height: 100%;
+    width: 30rem;
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-clip:border-box;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    filter: brightness(80%);
+    transition: all .5s ease-in-out;
+}
+.subsection-content .img:hover{
+    filter: brightness(100%);
+}
+.subsection-content .subsection-content-desc{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.subsection-content p{
+    padding: 1rem;
+    font-size: .9rem;
+    font-weight: 200;
+}
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: calc(100% - 4rem);
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    border-top: 1px solid #000;
+}
+footer .copyright{
+    font-size: 0.8rem;
+    opacity: .5;
+}
+footer .display-section button{
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 1rem;
+    padding: 0.2rem;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+    outline: none;
+    height: 1.8rem;
+    border: 1px solid #000;
+    border-radius: 0;
+    transition: all 1000 ease-in-out;
+}
+footer .display-section button:nth-child(1){
+    color: #000;
+    background-color: #dddddd;
+}
+footer .display-section button:nth-child(1):hover{
+    background-color: #fff;
+}
+footer .display-section button:nth-child(2){
+    color: white;
+    background-color: #333;
+}
+footer .display-section button:nth-child(2):hover{
+    background-color: #0D0D0D;
+}
+footer .display-section button:nth-child(3){
+    font-family: monospace;
+    font-weight: 600;
+}
