@@ -127,6 +127,7 @@ section.subsection h3{
     font-size: 1.2rem;
     font-weight: 300;
     width: 25%;
+    height: fit-content;
 }
 section.subsection h3:hover{
     text-decoration: underline;
