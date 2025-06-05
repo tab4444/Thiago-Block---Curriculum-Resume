@@ -47,63 +47,174 @@
     font-style: italic;
 }
 :root{
-    color-scheme: light;
+    color-scheme: light dark;
+    --bg-color: #e6e6e6;
+    --text-color: #0c0c0c;
 }
-*{
-    font-family: 'Neue Montreal';
+[data-theme="dark"]{
+    --bg-color: #0c0c0c;
+    --text-color: #e6e6e6;
+}
+[data-theme="light"]{
+    --bg-color: #e6e6e6;
+    --text-color: #0c0c0c;
+}
+*{  
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 ::selection{
-    background-color: #445;
-    color: #fff;
+    background-color: #555;
+    color: #e6e6e6;
 }
 html{
     scroll-behavior: smooth;
+}
+body{
+    font-family: 'Neue Montreal';
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border-color: var(--text-color);
+    transition: background-color 200ms ease, color 200ms ease;
+}
+body.monospace{
+    font-family: 'Monospace';
 }
 main{
     margin: 2rem;
     margin-bottom: 0;
     padding: 2rem;
+    min-height: calc(100vh - 4rem);
     height: max-content;
-    border: 1px solid #000;
+    border-top: 1px solid;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    border-color: var(--text-color);
+    overflow-x: hidden;
 }
+.top{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 2rem;
+    background-color: var(--bg-color);
+}
+.left{
+    position: fixed;
+    width: 2rem;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background-color: var(--bg-color);
+}
+.right{
+    position: fixed;
+    width: 2rem;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    background-color: var(--bg-color);
+}
+.bg {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200vh;
+  margin: 2rem;
+  z-index: -1;
+  background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+  background-repeat: repeat;
+  animation: bg-animation .2s infinite;
+  opacity: .9;
+  visibility: visible;
+}
+@keyframes bg-animation {
+    0% { transform: translate(0,0) }
+    10% { transform: translate(-5%,-5%) }
+    20% { transform: translate(-10%,5%) }
+    30% { transform: translate(5%,-10%) }
+    40% { transform: translate(-5%,15%) }
+    50% { transform: translate(-10%,5%) }
+    60% { transform: translate(15%,0) }
+    70% { transform: translate(0,10%) }
+    80% { transform: translate(-15%,0) }
+    90% { transform: translate(10%,5%) }
+    100% { transform: translate(5%,0) }
+}
+
 li{
     list-style: none;
 }
 main h1{
-    font-size: 3rem;
-    font-weight: 300;
+    font-size: 4rem;
+    font-weight: 200;
 }
 main h2{
-    font-size: .8rem;
+    font-size: 1rem;
     font-weight: 200;
 }
 main .heading{
     margin-bottom: 1rem;
 }
 section{
-    border-top: 1px solid #000;
+    border-top: 1px solid;
+    border-color: var(--text-color);
     display: flex;
     flex-direction: row;
     padding-top: 1rem;
 }
 section h2{
-    text-transform: uppercase;
+    text-transform: capitalize;
     width: 20%;
     font-size: 1.2rem;
-    font-weight: 400;
+    font-weight: 300;
     height: fit-content;
+    padding-bottom: 1rem;
+}
+section h2 i{
+    display: inline-block;
+    transform: rotate(-90deg);
+    transition: transform 200ms ease;
+}
+section h2 i.rotated{
+    transform: rotate(0deg);
 }
 h2:hover{
     text-decoration: underline;
 }
 section .section-content{
     width: 80%;
-    display: flex;
     flex-direction: column-reverse;
     row-gap: 1rem;
+    display: flex;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 800ms ease-out, opacity 600ms ease;
+}
+section #projects-section.display{
+    opacity: 1;
+    max-height: 100vh;
+    transition: max-height 800ms ease-in, opacity 200ms ease;   
+}
+section #work-section.display{
+    opacity: 1;
+    max-height: 100vh;
+    transition: max-height 800ms ease-in, opacity 200ms ease;   
+}
+section #skills-section.display{
+    opacity: 1;
+    max-height: 100vh;
+    transition: max-height 800ms ease-in, opacity 200ms ease;   
+}
+section #education-section.display{
+    opacity: 1;
+    max-height: 100vh;
+    transition: max-height 800ms ease-in, opacity 200ms ease;   
 }
 section.subsection{
     border: none;
@@ -112,7 +223,8 @@ section.subsection{
     flex-direction: row;
     height: 15rem;
     padding-bottom: 2rem;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid;
+    border-color: var(--text-color);
 }
 section.text-section section.subsection{
     padding-bottom: 0;
@@ -163,7 +275,8 @@ section.subsection .subsection-list{
 section.subsection .subsection-content{
     display: flex;
     flex-direction: row;
-    border: 1px solid #000;
+    border: 1px solid;
+    border-color: var(--text-color);
     border-radius: 5px;
     width: 75%;
 }
@@ -208,8 +321,9 @@ footer{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: #fff;
-    border-top: 1px solid #000;
+    background-color: var(--bg-color);
+    border-top: 1px solid;
+    border-color: var(--text-color);
 }
 footer .copyright{
     font-size: 0.8rem;
@@ -228,21 +342,33 @@ footer .display-section button{
     border-radius: 0;
     transition: all 1000 ease-in-out;
 }
-footer .display-section button:nth-child(1){
+footer .display-section #light-mode{
     color: #000;
-    background-color: #dddddd;
+    background-color: #b1b1b1;
 }
-footer .display-section button:nth-child(1):hover{
+footer .display-section #light-mode:hover{
     background-color: #fff;
 }
-footer .display-section button:nth-child(2){
-    color: white;
-    background-color: #333;
+footer .display-section #light-mode.active{
+    background-color: #fff;
 }
-footer .display-section button:nth-child(2):hover{
+footer .display-section #dark-mode{
+    color: white;
+    background-color: #474747;
+}
+footer .display-section #dark-mode:hover{
     background-color: #0D0D0D;
 }
-footer .display-section button:nth-child(3){
+footer .display-section #dark-mode.active{
+    background-color: #000;
+}
+footer .display-section #monospace{
+    background-color: #000;
+    color: #fff;
     font-family: monospace;
     font-weight: 600;
+}
+footer .display-section #monospace.active{
+    background-color: #fff;
+    color: #000;
 }
