@@ -293,7 +293,7 @@ section.subsection:nth-child(1){
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     filter: brightness(80%);
-    transition: all .5s ease-in-out;
+    transition: all 200ms ease-in-out;
 }
 .subsection-content .img:hover{
     filter: brightness(100%);
