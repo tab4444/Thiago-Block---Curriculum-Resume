@@ -84,6 +84,41 @@ body{
 body.monospace{
     font-family: 'Monospace';
 }
+header{
+    position: fixed;
+    height: 2rem;
+    top: 0;
+    left: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+header span{
+    height: fit-content;
+    width: 1.5rem;
+    border: 1px solid;
+    border-color: var(--text-color);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+header a{
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: .7rem;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 200;
+    background-color: var(--bg-color);
+    padding: 4.5px;
+    padding-right: 3.5px;
+}
+header a:hover{
+    opacity: .6;
+}
+header a.active{
+    filter: invert(100%);
+}
 main{
     margin: 2rem;
     margin-bottom: 0;
@@ -148,7 +183,6 @@ main{
     90% { transform: translate(10%,5%) }
     100% { transform: translate(5%,0) }
 }
-
 li{
     list-style: none;
 }
@@ -389,6 +423,7 @@ footer .display-section button{
     border: 1px solid #000;
     border-radius: 0;
     transition: all 1000 ease-in-out;
+    cursor: pointer;
 }
 footer .display-section #light-mode{
     color: #000;
@@ -411,10 +446,13 @@ footer .display-section #dark-mode.active{
     background-color: #000;
 }
 footer .display-section #monospace{
-    background-color: #000;
-    color: #fff;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     font-family: monospace;
     font-weight: 600;
+}
+footer .display-section #monospace:hover{
+    background-color: #888888;
 }
 footer .display-section #monospace.active{
     background-color: #fff;
