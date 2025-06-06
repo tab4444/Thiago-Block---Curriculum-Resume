@@ -1,16 +1,12 @@
 const project = document.getElementById("projects")
-const caret_project = project.querySelector('i')
 const project_section = document.getElementById("projects-section")
 project.addEventListener('click', ()=>{
-    caret_project.classList.toggle('rotated')
     project_section.classList.toggle('display')
 })
 
 const education = document.getElementById("education")
-const caret_education = education.querySelector('i')
 const education_section = document.getElementById("education-section")
 education.addEventListener('click', ()=>{
-    caret_education.classList.toggle('rotated')
     education_section.classList.toggle('display')
 })
 
@@ -21,10 +17,8 @@ work.addEventListener('click', () => {
 })
 
 const skills = document.getElementById("skills")
-const caret_skills = skills.querySelector("i")
 const skills_section = document.getElementById("skills-section")
 skills.addEventListener('click', () => {
-    caret_skills.classList.toggle('rotated')
     skills_section.classList.toggle('display')
 })
 
