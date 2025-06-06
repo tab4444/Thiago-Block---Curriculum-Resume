@@ -15,10 +15,8 @@ education.addEventListener('click', ()=>{
 })
 
 const work = document.getElementById("work")
-const caret_work = work.querySelector("i")
 const work_section = document.getElementById("work-section")
 work.addEventListener('click', () => {
-    caret_work.classList.toggle('rotated')
     work_section.classList.toggle('display')
 })
 
