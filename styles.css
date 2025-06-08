@@ -84,6 +84,28 @@ body{
 body.monospace{
     font-family: 'Monospace';
 }
+.loadingScreen {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity 400ms ease-in-out;
+  z-index: 20;
+}
+.loadingScreen.hide{
+    opacity: 0;
+    transition: opacity 400ms ease-in-out;
+}
+.loadingScreen h2{
+    font-size: 2rem;
+    font-weight: 200;
+}
 header{
     position: fixed;
     height: 2rem;

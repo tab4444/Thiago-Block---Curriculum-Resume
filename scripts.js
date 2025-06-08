@@ -1,3 +1,13 @@
+let loadingScreen = document.querySelector(".loadingScreen");
+window.addEventListener('load', () => {
+    setTimeout(()=>{
+        loadingScreen.classList.add('hide');
+    }, 1500)
+    setTimeout(()=>{
+        loadingScreen.style.display = 'none';
+    }, 1900)
+})
+
 const project = document.getElementById("projects")
 const project_section = document.getElementById("projects-section")
 project.addEventListener('click', ()=>{
